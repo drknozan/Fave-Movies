@@ -6,11 +6,13 @@ import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import Discover from "./pages/Discover";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/movie/:id" element={<Movie />} />
