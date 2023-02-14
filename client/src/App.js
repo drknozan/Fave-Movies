@@ -5,6 +5,9 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import Discover from "./pages/Discover";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -13,6 +16,8 @@ function App() {
     <div>
       <BrowserRouter>
         <ScrollToTop />
+        <Navbar />
+        <Sidebar />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/movie/:id" element={<Movie />} />
@@ -22,6 +27,7 @@ function App() {
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/profile" element={<Profile />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
