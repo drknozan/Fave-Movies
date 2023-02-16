@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import mongoSanitize from "express-mongo-sanitize";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import movieRoute from "./routes/movie.route.js";
 
 export const app = express();
 
@@ -28,6 +29,7 @@ app.use(mongoSanitize());
 app.use(express.json());
 
 // API routes
+app.use("/api/movies",  movieRoute);
 
 // 404 for any unknown request
 app.use((req, res) => {
