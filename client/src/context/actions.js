@@ -1,0 +1,10 @@
+export const DISPLAY_ALERT = "DISPLAY_ALERT";
+export const CLEAR_ALERT = "CLEAR_ALERT";
+
+export const LOGIN_USER = "LOGIN_USER";
+export const GET_CURRENT_USER = "GET_CURRENT_USER";
+export const LOGOUT_USER = "LOGOUT_USER";
+
+export const GET_WATCH_LIST = "GET_WATCH_LIST";
+export const UPDATE_WATCH_LIST = "UPDATE_WATCH_LIST";
+export const CLEAR_WATCH_LIST = "CLEAR_WATCH_LIST";
