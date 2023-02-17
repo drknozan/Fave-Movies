@@ -6,6 +6,8 @@ import mongoSanitize from "express-mongo-sanitize";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import movieRoute from "./routes/movie.route.js";
+import authRoute from "./routes/auth.route.js";
+import watchlistRoute from "./routes/watchlist.route.js";
 
 export const app = express();
 
@@ -30,6 +32,8 @@ app.use(express.json());
 
 // API routes
 app.use("/api/movies",  movieRoute);
+app.use("/api/auth",  authRoute);
+app.use("/api/watchlist", watchlistRoute);
 
 // 404 for any unknown request
 app.use((req, res) => {
