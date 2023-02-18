@@ -65,10 +65,10 @@ function Sidebar() {
                     Fantasy
                 </span>
             </li>
-            <li className="flex rounded-md p-2 cursor-pointer text-gray-300 text-sm items-center gap-x-4 bg-light-white mt-2 hover:bg-slate-800">
+            <li className="flex rounded-md p-2 cursor-pointer text-gray-300 text-sm items-center gap-x-4 bg-light-white mt-2 hover:bg-slate-800" onClick={() => navigate("/watchlist")}>
                 <BookmarkIcon className="h-6 w-6" />
                 <span className={`${!open && "hidden"} origin-left`}>
-                    Favorites
+                    Watch list
                 </span>
             </li>
           </ul>

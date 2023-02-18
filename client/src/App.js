@@ -17,16 +17,18 @@ function App() {
       <BrowserRouter>
         <ScrollToTop />
         <Navbar />
-        <Sidebar />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/movie/:id" element={<Movie />} />
-          <Route path="/search" element={<Search />} />
-          <Route exact path="/discover" element={<Discover />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/register" element={<Register />} />
-          <Route exact path="/profile" element={<Profile />} />
-        </Routes>
+        <div className="flex bg-slate-800">
+          <Sidebar />
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/movie/:id" element={<Movie />} />
+            <Route path="/search" element={<Search />} />
+            <Route exact path="/discover" element={<Discover />} />
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/register" element={<Register />} />
+            <Route exact path="/profile" element={<Profile />} />
+          </Routes>
+        </div>
         <Footer />
       </BrowserRouter>
     </div>
