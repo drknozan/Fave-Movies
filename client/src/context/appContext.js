@@ -92,6 +92,34 @@ const AppProvider = ({ children }) => {
         }
     }
 
+    const addMovieToWatchList = async (movieNo) => {
+        try {
+            const res = await axios.post("http://localhost:5000/api/watchlist/add", { movieNo: movieNo }, { withCredentials: true });
+
+            const updatedWatchList = res.data.movies;
+
+            dispatch({ type: UPDATE_WATCH_LIST, payload: { updatedWatchList } });
+
+            displayAlert("Movie successfully added to your watchlist", "success");
+        } catch (err) {
+            displayAlert(err.response.data.msg, "danger");
+        }
+    }
+
+    const deleteMovieFromWatchList = async (movieNo) => {
+        try {
+            const res = await axios.post("http://localhost:5000/api/watchlist/delete", { movieNo: movieNo }, { withCredentials: true });
+
+            const updatedWatchList = res.data.movies;
+
+            dispatch({ type: UPDATE_WATCH_LIST, payload: { updatedWatchList } });
+
+            displayAlert("Movie successfully deleted from your watchlist", "success");
+        } catch (err) {
+            displayAlert(err.response.data.msg, "danger");
+        }
+    }
+
     useEffect(() => {
         getCurrentUser();
     }, []);
@@ -103,8 +131,10 @@ const AppProvider = ({ children }) => {
                 displayAlert,
                 clearAlert,
                 loginUser,
-                getCurrentUser,
                 logoutUser,
+                getCurrentUser,
+                addMovieToWatchList,
+                deleteMovieFromWatchList,
             }}
         >
                 { children }

@@ -8,6 +8,8 @@ import Discover from "./pages/Discover";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
+import WatchList from "./pages/WatchList";
+import ProtectedRoute from "./utils/ProtectedRoute";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./utils/ScrollToTop";
 
@@ -27,6 +29,7 @@ function App() {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/register" element={<Register />} />
             <Route exact path="/profile" element={<Profile />} />
+            <Route exact path="/watchlist" element={<ProtectedRoute> <WatchList /> </ProtectedRoute>} />
           </Routes>
         </div>
         <Footer />
