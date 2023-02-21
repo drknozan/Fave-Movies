@@ -12,7 +12,7 @@ function Login() {
         if (user) {
             setTimeout(() => {
                 navigate("/");
-            }, 2000);
+            }, 1500);
         }
     }, [user]);
 

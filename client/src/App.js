@@ -8,11 +8,11 @@ import Discover from "./pages/Discover";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
+import Alert from "./components/Alert";
 import WatchList from "./pages/WatchList";
 import ProtectedRoute from "./utils/ProtectedRoute";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./utils/ScrollToTop";
-
 function App() {
   return (
     <div>
@@ -32,6 +32,7 @@ function App() {
             <Route exact path="/watchlist" element={<ProtectedRoute> <WatchList /> </ProtectedRoute>} />
           </Routes>
         </div>
+        <Alert />
         <Footer />
       </BrowserRouter>
     </div>
