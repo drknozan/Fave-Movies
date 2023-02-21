@@ -69,5 +69,5 @@ export const getCurrentUser = async (req, res) => {
 }
 
 export const logout = async (req, res) => {
-    return res.clearCookie("access_token", {path:'/'}).status(200).send({ msg: "Logged out" });
+    return res.clearCookie("access_token", { htppOnly: true, secure: process.env.NODE_ENV === "production" }).status(200).send({ msg: "Logged out" });
 }

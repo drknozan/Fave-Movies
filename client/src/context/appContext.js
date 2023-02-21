@@ -56,7 +56,7 @@ const AppProvider = ({ children }) => {
 
     const logoutUser = async () => {
         try {
-            await axios.get("http://localhost:5000/api/auth/logout");
+            await axios.post("http://localhost:5000/api/auth/logout", { type: "Logout" }, { withCredentials: true });
             
             const alertText = "Logged out";
             const alertType = "success";

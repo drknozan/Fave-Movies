@@ -8,6 +8,6 @@ const router = express.Router();
 router.route("/register").post(checkDuplicateUsername, register);
 router.route("/login").post(login);
 router.route("/getCurrentUser").get(verifyToken, getCurrentUser);
-router.route("/logout").get(logout);
+router.route("/logout").post(logout);
 
 export default router;
