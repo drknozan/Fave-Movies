@@ -13,6 +13,7 @@ import WatchList from "./pages/WatchList";
 import ProtectedRoute from "./utils/ProtectedRoute";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./utils/ScrollToTop";
+import NotFound from "./pages/NotFound";
 function App() {
   return (
     <div>
@@ -25,11 +26,12 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route path="/movie/:id" element={<Movie />} />
             <Route path="/search" element={<Search />} />
-            <Route exact path="/discover" element={<Discover />} />
-            <Route exact path="/login" element={<Login />} />
-            <Route exact path="/register" element={<Register />} />
-            <Route exact path="/profile" element={<Profile />} />
-            <Route exact path="/watchlist" element={<ProtectedRoute> <WatchList /> </ProtectedRoute>} />
+            <Route path="/discover" element={<Discover />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/watchlist" element={<ProtectedRoute> <WatchList /> </ProtectedRoute>} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
         <Alert />
