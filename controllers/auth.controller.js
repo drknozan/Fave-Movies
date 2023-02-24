@@ -2,12 +2,21 @@ import User from "../models/user.model.js";
 import Watchlist from "../models/watchlist.model.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import validator from "validator";
 
 export const register = async (req, res) => {
     const { username, password } = req.body;
 
     if (!username || !password) {
         return res.status(400).send({ msg: "Required values not provided." });
+    }
+
+    if (!validator.isAlphanumeric(username)) {
+        return res.status(400).send({ msg: "Username can only contain letters and numbers." })
+    }
+
+    if (!validator.isStrongPassword(password)) {
+        return res.status(400).send({ msg: "Password must be minimum 8 length, min 1 upper and 1 lower char, min 1 number, min 1 symbol." })
     }
 
     const salt = await bcrypt.genSalt(10)

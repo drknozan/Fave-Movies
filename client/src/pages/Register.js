@@ -7,7 +7,7 @@ import axios from "axios";
 
 function Login() {
     const navigate = useNavigate();
-    const { user } = useAppContext();
+    const { user, displayAlert } = useAppContext();
 
     useEffect(() => {
         if (user) {
@@ -39,9 +39,10 @@ function Login() {
                                 validationSchema={schema}
                                 onSubmit={async (values) => {
                                     try {
-                                        const res = await axios.post("http://localhost:5000/api/auth/register", { username: values.username, password: values.password }, { withCredentials: true });
+                                        const res = await axios.post("http://localhost:5000/api/auth/register", { username: values.username, password: values.password });
+                                        displayAlert("Account successfully created.", "success");
                                     } catch (error) {
-                                        
+                                        displayAlert(error.response.data.msg, "danger");
                                     }
                                 }}
                             >
