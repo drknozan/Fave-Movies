@@ -40,6 +40,9 @@ function MovieCarousel({ genre }) {
                 navigation={true}
                 modules={[ Navigation ]}
                 className="mySwiper h-80"
+                style={{
+                    "--swiper-navigation-color": "#fff",
+                }}
                 >
                     {
                         movies &&
